@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChild, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-child-projection',
@@ -7,16 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChildProjectionComponent implements OnInit {
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
     console.log("Constructor - Child Projection")
-   }
+  }
 
   ngOnInit(): void {
     console.log("ngOnInit - Child Projection");
   }
 
-  ngAfterContentInit(){
-    console.log('ngAfterContentInit - Child Project');
+  // ngAfterContentInit(){
+  //   console.log('ngAfterContentInit - Child Project');
+  // }
+
+  @ContentChild('header') headerContent!: ElementRef;
+
+  ngAfterContentInit() {
+    this.headerContent.nativeElement.innerText = "Angular Example";
+    this.renderer.setStyle(this.headerContent.nativeElement, "backgroundColor", "yellow");
   }
 
 }
