@@ -1,0 +1,11 @@
+<div class="row col-md-5">
+  <div class="mb-3">
+    <label class="form-label"></label>
+    <input type="text" class="form-control" #myName />
+    <button class="btn btn-primary" (click)="updateName(myName)">Submit</button>
+    <button class="btn btn-danger" (click)="destroy()">Destroy</button>
+  </div>
+</div>
+<div class="row">
+  <app-child [name]="newName" *ngIf="!isDestoryed"></app-child>
+</div>
