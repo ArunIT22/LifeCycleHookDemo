@@ -12,4 +12,10 @@ export class DemoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isValid: boolean = true;
+
+  showMore() {
+    this.isValid = !this.isValid;
+  }
+
 }

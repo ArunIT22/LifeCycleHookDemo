@@ -11,6 +11,8 @@ import { DemoComponent } from './demo/demo.component';
 import { ApplyBorder2Directive } from './CustomDirectives/apply-border2.directive';
 import { MouseOverDirective } from './CustomDirectives/mouse-over.directive';
 import { DynamicDirective } from './CustomDirectives/dynamic.directive';
+import { MyIfDirective } from './CustomDirectives/my-if.directive';
+import { DelayDirective } from './CustomDirectives/delay.directive';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { DynamicDirective } from './CustomDirectives/dynamic.directive';
     DemoComponent,
     ApplyBorder2Directive,
     MouseOverDirective,
-    DynamicDirective
+    DynamicDirective,
+    MyIfDirective,
+    DelayDirective
   ],
   imports: [
     BrowserModule

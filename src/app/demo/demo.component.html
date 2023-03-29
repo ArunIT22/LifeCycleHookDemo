@@ -1,22 +1,45 @@
 <div class="container col-md-8">
-  <div class="mt-4">
+  <!-- <div class="mt-4">
     <h1 ApplyCoralBackground>Custom Directive Example</h1>
   </div>
   <div class="mt-4">
     <h1 appApplyBorder2>Custom Directive Example - Renderer</h1>
-  </div>
+  </div> -->
 
   <!-- Host Listener -->
-  <div class="mt-4">
+  <!-- <div class="mt-4">
     <h1 appApplyBorder2 appMouseOver>
       Custom Directive Example(Mouse Hover) - Host Listener
     </h1>
-  </div>
+  </div> -->
 
   <!-- Host Binding -->
-  <div class="mt-4">
-    <h1 appDynamic [defaultColor]="'green'" [mouseEnter]="'blue'" [mouseLeave]="'black'">
+  <!-- <div class="mt-4">
+    <h1
+      appDynamic
+      [defaultColor]="'green'"
+      [mouseEnter]="'blue'"
+      [mouseLeave]="'black'"
+    >
       Custom Directive Example (Dynamic) - Host Binding
     </h1>
+  </div> -->
+
+  <!-- ngIF - Custom Structural -->
+  <div class="mt-4">
+    <button class="btn btn-primary" (click)="showMore()">Hide</button>
+    <div *appMyIf="isValid">
+      <h1>More Details...........</h1>
+      <button class="btn btn-warning">Clear</button>
+    </div>
+
+    <!-- <ng-template [ngIf]="isValid">
+      <h1>More Details...........</h1>
+    </ng-template> -->
+  </div>
+
+  <!-- Custom Structual Directive - Delay Rendering -->
+  <div class="mt-4">
+    <h1 *appDelay="3000">This is template will after few seconds</h1>
   </div>
 </div>
